@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FunctionComponent } from "react";
 
 interface MenuProps {
@@ -21,9 +22,9 @@ const Menu: FunctionComponent<MenuProps> = () => {
       <ul>
         {
           items.map((item, key) => <li className="" key={key}>
-            <a className="rounded-full block hover:bg-white/30 py-2 pl-2" href="#">
+            <Link className="rounded-full block hover:bg-white/30 py-2 pl-2" href={item.href}>
               {item.title}
-            </a>
+            </Link>
           </li>)
         }
       </ul>
