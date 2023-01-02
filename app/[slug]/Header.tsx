@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import Tab from "./Tab";
@@ -24,8 +26,8 @@ const paths = [
 ];
 
 const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
-  const pathName = usePathname()
-  console.log(pathName);
+  const pathName = usePathname();
+
   return (
     <>
       <div className="mt-8 flex items-center">
@@ -100,15 +102,29 @@ const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
           </li>
         ))}
       </ul>
-      <div className="border-t mt-10 border-slate-100">
+      <div className="border-t mt-10 border-slate-400">
         <ul className="flex items-center justify-center gap-8 uppercase">
-          {paths.map((path) => (
-            <li key={path.path}>
-              <Link className={`py-4 block`} href={`/${slug}${path.path}`}>
-                {path.label}
-              </Link>
-            </li>
-          ))}
+          {paths.map((path) => {
+            const route = `/${slug}${path.path}`;
+            return (
+              <li className="relative" key={path.path}>
+                {pathName === route && (
+                  <span
+                    style={{ marginTop: -1 }}
+                    className="absolute border-t border-white w-full"
+                  ></span>
+                )}
+                <Link
+                  className={`py-4 block ${
+                    pathName === route ? "" : "text-slate-400"
+                  }`}
+                  href={route}
+                >
+                  {path.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

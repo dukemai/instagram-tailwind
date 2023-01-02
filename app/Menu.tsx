@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FunctionComponent } from "react";
+import { usePathname, useRouter, useSelectedLayoutSegment } from "next/navigation";
 
 interface MenuProps {
 
@@ -15,7 +16,7 @@ const items: Array<MenuItem> = [{ title: "Home", href: "/" },
 { title: "Notifications", href: "/" }, { title: "Create", href: "/" },
 { title: "Profile", href: "/" }]
 
-const Menu: FunctionComponent<MenuProps> = () => {
+const Menu: FunctionComponent<MenuProps> = () => {  
   return (<div className="bg-black h-screen p-4 flex flex-col">
     <h1 className="h1 mt-2 mb-4 text-xl pl-2 font-bold">Instagram</h1>
     <nav>
