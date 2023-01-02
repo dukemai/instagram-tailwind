@@ -48,7 +48,7 @@ const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
             <button className="ml-2 bg-white text-black py-1 px-2 rounded-md text-sm font-bold">
               Add
             </button>
-            <button className="ml-2 py-1 px-2 rounded-md">
+            <button onClick={console.log} className="ml-2 py-1 px-2 rounded-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -103,7 +103,7 @@ const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
         ))}
       </ul>
       <div className="border-t mt-10 border-slate-400">
-        <ul className="flex items-center justify-center gap-8 uppercase">
+        <ul className="flex items-center justify-center gap-8 uppercase text-sm font-semibold">
           {paths.map((path) => {
             const route = `/${slug}${path.path}`;
             return (
