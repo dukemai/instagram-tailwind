@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FunctionComponent } from "react";
 import Tab from "./Tab";
 import { usePathname } from "next/navigation";
+import MoreMenu from "./MoreMenu";
 
 interface HeaderProps {
   slug?: string;
@@ -65,6 +66,7 @@ const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
               </svg>
             </button>
           </div>
+          <MoreMenu />
           <div className="flex mt-4 gap-6">
             <div>
               <span className="font-bold">1,060</span>

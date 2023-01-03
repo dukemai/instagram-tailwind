@@ -7,7 +7,7 @@ export default function DetailLayout(props: {
   },
 }) {
   return (
-    <div className="pl-16 max-w-4xl h-screen overflow-y-scroll">
+    <div className="pl-16 max-w-4xl">
       <Header slug={props.params.slug} />
       {props.children}
     </div>

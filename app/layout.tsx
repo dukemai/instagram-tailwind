@@ -11,7 +11,7 @@ export default function RootLayout({
       <head />
       <body className='grid grid-cols-5 p-0 dark:bg-slate-800 dark:text-white'>
         <Menu />
-        <div className='col-span-4'>
+        <div className='col-span-4 h-screen overflow-y-scroll'>
           {children}
         </div>
       </body>

@@ -8,7 +8,7 @@ const cards = [...new Array(10).keys()];
 
 export default function Home() {
   return (
-    <div className='grid grid-cols-2 pt-4 h-screen overflow-y-scroll'>
+    <div className='grid grid-cols-2 pt-4'>
       <div className='flex flex-col items-end'>
         <Header />
         {cards.map((card, key) => (
