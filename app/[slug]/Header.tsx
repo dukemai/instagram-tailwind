@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { FunctionComponent, useState } from "react";
-import Tab from "./Tab";
 import { usePathname } from "next/navigation";
 import MoreMenu from "./MoreMenu";
 
