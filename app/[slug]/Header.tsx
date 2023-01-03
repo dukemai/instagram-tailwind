@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import Tab from "./Tab";
 import { usePathname } from "next/navigation";
 import MoreMenu from "./MoreMenu";
@@ -28,6 +28,7 @@ const paths = [
 
 const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
   const pathName = usePathname();
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -49,7 +50,7 @@ const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
             <button className="ml-2 bg-white text-black py-1 px-2 rounded-md text-sm font-bold">
               Add
             </button>
-            <button onClick={console.log} className="ml-2 py-1 px-2 rounded-md">
+            <button onClick={() => setOpen(true)} className="ml-2 py-1 px-2 rounded-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -66,7 +67,7 @@ const Header: FunctionComponent<HeaderProps> = ({ slug, selectedPage }) => {
               </svg>
             </button>
           </div>
-          <MoreMenu />
+          <MoreMenu open={open} onClose={() => setOpen(false)} />
           <div className="flex mt-4 gap-6">
             <div>
               <span className="font-bold">1,060</span>
